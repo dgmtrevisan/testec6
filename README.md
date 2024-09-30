@@ -2,6 +2,12 @@ Aplicação criada para o teste do C6 usando NextJs.
 
 ## Rodando a aplicação
 
+Para instalar as dependências:
+
+```bash
+npm i
+```
+
 Para rodar em modo de desenvolvimento:
 
 ```bash
