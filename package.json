@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch --transformIgnorePatterns",
-    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
