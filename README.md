@@ -25,7 +25,7 @@ npm run start
 
 Acesse [http://localhost:3000](http://localhost:3000) para ver o resultado.
 
-Para rodar o start é preciso fazer o build antes:
+Para rodar os testes
 
 ```bash
 npm run test
