@@ -5,11 +5,12 @@ import { bffURL, perPage } from '@constants/constants';
 import axios from 'axios';
 
 export async function getPostById(id: string) {
-  const response = await axios.get(`${bffURL}post?id=${id}`);
-  if (response.status === 200) {
+  try {
+    const response = await axios.get(`${bffURL}post?id=${id}`);
     return Post.fromJson(response.data);
+  } catch (error) {
+    return {};
   }
-  return {};
 };
 
 export async function getPosts(params: SearchParam[]) {
@@ -18,13 +19,15 @@ export async function getPosts(params: SearchParam[]) {
     searchParams.append(item.key, item.value);
   });
   searchParams.append('limit', perPage.toString());
-  const response = await axios.get(`${bffURL}posts?${searchParams.toString()}`);
-  if (response.status === 200) {
+  
+  try {
+    const response = await axios.get(`${bffURL}posts?${searchParams.toString()}`);
     return PostList.fromJson(response.data);
-  }
-  return {
-    posts: [],
-    page: 0,
-    totalPages: 0,
+  } catch (error) {
+    return {
+      posts: [],
+      page: 0,
+      totalPages: 0,
+    }
   }
 };
