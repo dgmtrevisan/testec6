@@ -4,7 +4,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import Grid from '@mui/material/Grid2';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export default function Search() {
   const router = useRouter();
@@ -26,6 +26,7 @@ export default function Search() {
             value={searchTerm}
             size="small"
             placeholder="Buscar..."
+            label="Buscar"
             startAdornment={
               <InputAdornment position="start" sx={{ color: 'text.primary' }}>
                 <SearchRoundedIcon fontSize="small" />

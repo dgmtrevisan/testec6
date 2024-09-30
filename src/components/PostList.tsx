@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CardActionArea from '@mui/material/CardActionArea';
 import Pagination from '@mui/material/Pagination';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import Post from '@models/Post';
 import AlertError from '@components/AlertError';
@@ -32,7 +31,7 @@ export default function PostList({ posts, page, totalPages, searchTerm }: PostLi
           variant="outlined"
           style={ { height: '100%' } }
         >
-          <CardActionArea href={`post/${id}`} style={ { height: '100%' } }>
+          <CardActionArea href={`/post/${id}`} style={ { height: '100%' } }>
             <CardMedia
               component="img"
               alt={title}
